@@ -28,11 +28,11 @@ const theme = createTheme({
       color: "#111",
     },
     h4: {
-      fontSize: "1.4rem",
-      fontWeight: 700,
+      fontSize: "1.35rem",
+      fontWeight: 600,
     },
     h3: {
-      fontSize: "1.8rem",
+      fontSize: "1.75rem",
       fontWeight: 600,
     },
     h2: {
