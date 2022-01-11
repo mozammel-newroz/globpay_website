@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#08A858",
+      main: "#5CC74C",
     },
     secondary: {
       main: "#fff",

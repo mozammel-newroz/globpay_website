@@ -2,8 +2,14 @@ import { Container, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@mui/styles";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-const useStyle = makeStyles({
+import MobileMenu from "./MobileMenu";
+
+const useStyle = makeStyles((theme) => ({
   root: {
     // background: "#eee",
   },
@@ -18,7 +24,8 @@ const useStyle = makeStyles({
   },
   left: {
     display: "flex",
-    // justifyContent: "center",
+    justifyContent: "flex-start",
+    alignItems: "center",
   },
   menu_item: {
     display: "flex",
@@ -32,16 +39,29 @@ const useStyle = makeStyles({
     "& a": {
       textDecoration: "none",
     },
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+      background: "red",
+    },
   },
-});
+}));
 
 const Header = () => {
   const classes = useStyle();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
     <div className={classes.root}>
       <Container maxWidth="lg">
         <div className={classes.top_bar}>
           <div className={classes.left}>
+            <MobileMenu />
             <img src="/images/logo.png" alt="" />
             <ul className={classes.menu_item}>
               <li>
@@ -61,7 +81,31 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <div className="">language</div>
+          <div className="">
+            <Button
+              id="basic-button"
+              aria-controls={open ? "basic-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              onClick={handleClick}
+              endIcon={<KeyboardArrowDownIcon />}
+            >
+              Language
+            </Button>
+
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+            >
+              <MenuItem onClick={handleClose}>English</MenuItem>
+              <MenuItem onClick={handleClose}>Spanish</MenuItem>  
+            </Menu>
+          </div>
         </div>
       </Container>
     </div>

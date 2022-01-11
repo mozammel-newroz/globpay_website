@@ -1,10 +1,10 @@
 import React from "react";
 import { makeStyles } from "@mui/styles";
 import { Container, Grid, Typography } from "@mui/material";
-const useStyle = makeStyles({
+const useStyle = makeStyles((theme) => ({
   root: {
     backgroundImage: "linear-gradient(to top right, #ECFBEF, #FCFEFC, #E3F6FE)",
-    position: 'relative',
+    position: "relative",
     // top: 24
   },
   wrapper: {
@@ -35,6 +35,15 @@ const useStyle = makeStyles({
     marginLeft: 40,
     position: "relative",
     top: 5,
+    
+  },
+  poly2: {
+    marginLeft: 40,
+    position: "relative",
+    top: 5,
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
   },
   banner_text: {
     paddingTop: 30,
@@ -45,7 +54,13 @@ const useStyle = makeStyles({
       marginRight: 15,
     },
   },
-});
+  title: {
+    [theme.breakpoints.down("md")]: {
+      fontSize: "3rem !important",
+      lineHeight: "1.6 !important",
+    },
+  },
+}));
 
 const Banner = () => {
   const classes = useStyle();
@@ -54,8 +69,8 @@ const Banner = () => {
     <div className={classes.root}>
       <Container maxWidth="lg">
         <Grid container spacing={3} className={classes.wrapper}>
-          <Grid item lg={8}>
-            <Typography variant="h1">
+          <Grid item md={8}>
+            <Typography variant="h1" className={classes.title}>
               <span className={classes.low_cost_header}>
                 <span className={classes.low_cost}>Low cost</span>
               </span>
@@ -72,11 +87,11 @@ const Banner = () => {
               <img src="/images/apple_store.png" alt="" />
             </div>
           </Grid>
-          <Grid item lg={4}>
+          <Grid item md={4}>
             <img
               src="/images/banner_right.png"
               alt=""
-              className={classes.poly}
+              className={classes.poly2}
             />
           </Grid>
         </Grid>

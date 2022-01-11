@@ -3,13 +3,16 @@ import React from "react";
 import { makeStyles } from "@mui/styles";
 
 import Banner from "../components/Banner";
+import FaqHome from "../components/FaqHome";
 
-const useStyle = makeStyles({
+const useStyle = makeStyles((theme) => ({
   wrapper1: {
     background: "#FBFAFD",
     position: "relative",
+
     marginTop: "100px !important",
     padding: 30,
+    left: 12,
     borderRadius: 30,
     boxShadow: "1px 1px 3px 1px #eee",
   },
@@ -27,6 +30,9 @@ const useStyle = makeStyles({
   w2_title: {
     textAlign: "center",
     margin: "60px 0px !important",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "2.5rem !important",
+    },
   },
   w2__box: {
     background: "#F1FBFF",
@@ -51,9 +57,9 @@ const useStyle = makeStyles({
     background: "#FBFAFD",
     padding: "90px 0px",
   },
-  w3_title: {
-    marginBottom: "20px !important",
-  },
+  // w3_title: {
+  //   marginBottom: "20px !important",
+  // },
   w3_text: {
     marginBottom: "20px !important",
   },
@@ -65,7 +71,10 @@ const useStyle = makeStyles({
     marginRight: 25,
   },
   w3_title: {
-    marginBottom: "15px !important",
+    marginBottom: "20px !important",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "2.5rem !important",
+    },
   },
   wrapper4: {
     backgroundImage: "url('/images/bg.png')",
@@ -80,10 +89,16 @@ const useStyle = makeStyles({
   },
   w4_title: {
     marginBottom: "20px !important",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "2.5rem !important",
+    },
   },
   w4_left_img: {
     position: "relative",
     top: 19,
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
   },
   w4_right: {
     padding: 20,
@@ -101,6 +116,9 @@ const useStyle = makeStyles({
   w5_header: {
     textAlign: "center",
     marginBottom: "20px !important",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "2.5rem !important",
+    },
   },
 
   w5_subtitle: {
@@ -110,10 +128,21 @@ const useStyle = makeStyles({
   w5_box: {
     "&:hover": {
       backgroundImage: "linear-gradient(#F0FBFF, #fff)",
+      "& $w5_img": {
+        background: "rgba(92, 199, 76, 0.5)",
+      },
     },
   },
   w5_img: {
+    height: 50,
+    width: 50,
+    background: "#fff",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 20,
     marginBottom: 20,
+    borderRadius: "50%",
   },
   w5_title: {
     marginBottom: "20px !important",
@@ -124,26 +153,49 @@ const useStyle = makeStyles({
     borderRight: "1px solid #E7EDF5",
     borderBottom: "1px solid #E7EDF5",
     padding: "0px 60px 60px 5px",
+    [theme.breakpoints.down("md")]: {
+      padding: 10,
+      borderBottom: "0px solid #E7EDF5",
+    },
   },
   w5_two: {
     borderRight: "1px solid #E7EDF5",
     borderBottom: "1px solid #E7EDF5",
     padding: "0px 30px 60px 60px",
+    [theme.breakpoints.down("md")]: {
+      padding: 10,
+      borderBottom: "0px solid #E7EDF5",
+    },
   },
   w5_three: {
     borderBottom: "1px solid #E7EDF5",
     padding: "0px 5px 60px 60px",
+    [theme.breakpoints.down("md")]: {
+      padding: 10,
+      borderBottom: "0px solid #E7EDF5",
+    },
   },
   w5_four: {
     borderRight: "1px solid #E7EDF5",
     padding: "30px 30px 60px 5px",
+    [theme.breakpoints.down("md")]: {
+      padding: 10,
+      borderRight: "0px solid #E7EDF5",
+    },
   },
   w5_five: {
     borderRight: "1px solid #E7EDF5",
     padding: "30px 30px 60px 60px",
+    [theme.breakpoints.down("md")]: {
+      padding: 10,
+      borderRight: "1px solid #E7EDF5",
+    },
   },
   w5_six: {
     padding: "30px 5px 60px 60px",
+    [theme.breakpoints.down("md")]: {
+      padding: 10,
+    },
   },
   wrapper6: {
     background: "#FBFAFD",
@@ -155,13 +207,23 @@ const useStyle = makeStyles({
   w6_header: {
     textAlign: "center",
     marginBottom: "40px !important",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "2.5rem !important",
+    },
   },
   w6_inner: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    [theme.breakpoints.down("md")]: {
+      flexDirection: "column",
+    },
     "& div": {
       flex: 1,
+      [theme.breakpoints.down("md")]: {
+        // background: "red",
+        width: "90%",
+      },
     },
   },
   w6_flag: {
@@ -174,7 +236,17 @@ const useStyle = makeStyles({
     margin: "30px 15px",
     boxShadow: "3px 3px 25px #eee",
   },
-});
+  wrapper7: {
+    margin: "90px 0px",
+  },
+  w7_header: {
+    textAlign: "center",
+    marginBottom: "40px !important",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "2.5rem !important",
+    },
+  },
+}));
 
 const Home = () => {
   const classes = useStyle();
@@ -183,7 +255,7 @@ const Home = () => {
       <Banner />
       <Container maxWidth="lg">
         <Grid container className={classes.wrapper1} spacing={3}>
-          <Grid item lg={4}>
+          <Grid item md={4} sm={12}>
             <img src="/images/low_cost.png" alt="" />
             <Typography variant="h3" className={classes.w1_head}>
               Low cost
@@ -195,7 +267,7 @@ const Home = () => {
             </Typography>
           </Grid>
 
-          <Grid item lg={4}>
+          <Grid item md={4} sm={12}>
             <img src="/images/fast.png" alt="" />
             <Typography variant="h3" className={classes.w1_head}>
               Low cost
@@ -207,7 +279,7 @@ const Home = () => {
             </Typography>
           </Grid>
 
-          <Grid item lg={4}>
+          <Grid item md={4}>
             <img src="/images/safe.png" alt="" />
             <Typography variant="h3" className={classes.w1_head}>
               Low cost
@@ -221,7 +293,7 @@ const Home = () => {
         </Grid>
 
         <Grid container spacing={0}>
-          <Grid item lg={12}>
+          <Grid item md={12}>
             <Typography variant="h2" className={classes.w2_title}>
               Getting Started is easy!
             </Typography>
@@ -229,7 +301,7 @@ const Home = () => {
         </Grid>
 
         <Grid container className={classes.wrapper2} spacing={6}>
-          <Grid item lg={4}>
+          <Grid item md={4}>
             <div className={classes.w2__box}>
               <img src="/images/register.png" alt="" />
 
@@ -243,7 +315,7 @@ const Home = () => {
               </Typography>
             </div>
           </Grid>
-          <Grid item lg={4}>
+          <Grid item md={4}>
             <div className={classes.w2__box}>
               <img src="/images/verify.png" alt="" />
 
@@ -257,7 +329,7 @@ const Home = () => {
               </Typography>
             </div>
           </Grid>
-          <Grid item lg={4}>
+          <Grid item md={4}>
             <div className={classes.w2__box}>
               <img src="/images/start.png" alt="" />
 
@@ -277,7 +349,7 @@ const Home = () => {
       <div className={classes.wrapper3}>
         <Container maxWidth="lg">
           <Grid container spacing={6}>
-            <Grid item lg={6}>
+            <Grid item md={6}>
               <Typography variant="h2" className={classes.w3_title}>
                 A variety of ways <br /> to send & reacived money
               </Typography>
@@ -294,7 +366,7 @@ const Home = () => {
                 blanditiis? Voluptas molestias beatae atque rem!
               </Typography>
             </Grid>
-            <Grid item lg={6}>
+            <Grid item md={6}>
               <div className={classes.w3_box}>
                 <div className="">
                   <img
@@ -359,7 +431,7 @@ const Home = () => {
 
       <Container maxWidth="lg">
         <Grid container spacing={3}>
-          <Grid item lg={12}>
+          <Grid item md={12}>
             <div className={classes.wrapper4}>
               <div>
                 <img
@@ -389,7 +461,7 @@ const Home = () => {
       <div className={classes.wrapper5}>
         <Container maxWidth="lg">
           <Grid container spacing={0}>
-            <Grid item lg={12}>
+            <Grid item md={12}>
               <Typography variant="h2" className={classes.w5_header}>
                 Globpay is safe and secure
               </Typography>
@@ -399,13 +471,11 @@ const Home = () => {
                 email.
               </Typography>
             </Grid>
-            <Grid item lg={4}>
+            <Grid item md={4}>
               <div className={`${classes.w5_box} ${classes.w5_one}`}>
-                <img
-                  src="/images/search.png"
-                  alt=""
-                  className={classes.w5_img}
-                />
+                <div className={classes.w5_img}>
+                  <img src="/images/kyc.png" alt="" />
+                </div>
                 <Typography variant="h4" className={classes.w5_title}>
                   KYC Verification
                 </Typography>
@@ -415,83 +485,73 @@ const Home = () => {
                 </Typography>
               </div>
             </Grid>
-            <Grid item lg={4}>
+            <Grid item md={4}>
               <div className={`${classes.w5_box} ${classes.w5_two}`}>
-                <img
-                  src="/images/search.png"
-                  alt=""
-                  className={classes.w5_img}
-                />
+                <div className={classes.w5_img}>
+                  <img src="/images/2fector.png" alt="" />
+                </div>
                 <Typography variant="h4" className={classes.w5_title}>
                   2 factor Authentication
                 </Typography>
                 <Typography variant="body1" className={classes.w5_text}>
-                  Get paid instantly with Payment Links. Let your customers pay
-                  online without having an App
+                  Become a Merchant and start accepting international Payments
+                  from anywhere into Pakistan
                 </Typography>
               </div>
             </Grid>
-            <Grid item lg={4}>
+            <Grid item md={4}>
               <div className={`${classes.w5_box} ${classes.w5_three}`}>
-                <img
-                  src="/images/search.png"
-                  alt=""
-                  className={classes.w5_img}
-                />
+                <div className={classes.w5_img}>
+                  <img src="/images/search_icon.png" alt="" />
+                </div>
                 <Typography variant="h4" className={classes.w5_title}>
                   Regular Audits
                 </Typography>
                 <Typography variant="body1" className={classes.w5_text}>
-                  Get paid instantly with Payment Links. Let your customers pay
-                  online without having an App
+                  Accept Payment via Visa, Master Card, EasyPaisa, UPaisa & Net
+                  Banking in Pakistan
                 </Typography>
               </div>
             </Grid>
-            <Grid item lg={4}>
+            <Grid item md={4}>
               <div className={`${classes.w5_box} ${classes.w5_four}`}>
-                <img
-                  src="/images/search.png"
-                  alt=""
-                  className={classes.w5_img}
-                />
+                <div className={classes.w5_img}>
+                  <img src="/images/world.png" alt="" />
+                </div>
                 <Typography variant="h4" className={classes.w5_title}>
                   Monitored around the world
                 </Typography>
                 <Typography variant="body1" className={classes.w5_text}>
-                  Get paid instantly with Payment Links. Let your customers pay
-                  online without having an App
+                  Use our Payment Page to accept local and international
+                  payments without having your own website
                 </Typography>
               </div>
             </Grid>
-            <Grid item lg={4}>
+            <Grid item md={4}>
               <div className={`${classes.w5_box} ${classes.w5_five}`}>
-                <img
-                  src="/images/search.png"
-                  alt=""
-                  className={classes.w5_img}
-                />
+                <div className={classes.w5_img}>
+                  <img src="/images/safe_icon.png" alt="" />
+                </div>
                 <Typography variant="h4" className={classes.w5_title}>
                   Safe Guard with banks
                 </Typography>
                 <Typography variant="body1" className={classes.w5_text}>
-                  Get paid instantly with Payment Links. Let your customers pay
-                  online without having an App
+                  We provide Payment SDK for Android, iOS and Web. Integrate
+                  your own App or website to accept payments.
                 </Typography>
               </div>
             </Grid>
-            <Grid item lg={4}>
+            <Grid item md={4}>
               <div className={`${classes.w5_box} ${classes.w5_six}`}>
-                <img
-                  src="/images/search.png"
-                  alt=""
-                  className={classes.w5_img}
-                />
+                <div className={classes.w5_img}>
+                  <img src="/images/anti.png" alt="" />
+                </div>
                 <Typography variant="h4" className={classes.w5_title}>
                   Anti fraud protection
                 </Typography>
                 <Typography variant="body1" className={classes.w5_text}>
-                  Get paid instantly with Payment Links. Let your customers pay
-                  online without having an App
+                  Create, Copy and Collect With Payment Button. Collect Onetime
+                  or Subscription Payments & more
                 </Typography>
               </div>
             </Grid>
@@ -501,7 +561,7 @@ const Home = () => {
       <div className={classes.wrapper6}>
         <Container maxWidth="lg">
           <Grid container>
-            <Grid item lg={12}>
+            <Grid item md={12}>
               <Typography variant="h2" className={classes.w6_header}>
                 Send money to over 12 countries world wide
               </Typography>
@@ -548,6 +608,16 @@ const Home = () => {
           </Grid>
         </Container>
       </div>
+      <Container maxWidth="lg" className={classes.wrapper7}>
+        <Grid container>
+          <Grid item md={12}>
+            <Typography variant="h2" className={classes.w7_header}>
+              Frequently Asked Questions
+            </Typography>
+            <FaqHome />
+          </Grid>
+        </Grid>
+      </Container>
     </div>
   );
 };
