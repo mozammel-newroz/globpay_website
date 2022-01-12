@@ -13,12 +13,10 @@ import MobileMenu from "./MobileMenu";
 const useStyle = makeStyles((theme) => ({
   root: {
     // background: "#eee",
-    overflow: "hidden",
+    // overflow: "hidden",
   },
   top_bar: {
-    // overflow: "hidden",
-    // display: "block",
-    // marginBottom: 24,
+   
 
     display: "flex",
     justifyContent: "space-between",
@@ -30,6 +28,11 @@ const useStyle = makeStyles((theme) => ({
     justifyContent: "flex-start",
     alignItems: "center",
   },
+  language: {
+    display: "flex",
+    justifyContent: "flex-end",
+  },
+
   menu_item: {
     display: "flex",
     justifyContent: "center",
@@ -66,7 +69,7 @@ const Header = () => {
     <div className={classes.root}>
       <Container maxWidth="lg">
         <Grid container>
-          <Grid item mg={12}>
+          <Grid item md={12}>
             <div className={classes.top_bar}>
               <div className={classes.left}>
                 <MobileMenu />
