@@ -1,10 +1,11 @@
-import { Container, Typography } from "@mui/material";
-import React from "react";
+import { Container, Grid, Select, Typography } from "@mui/material";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@mui/styles";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import MobileMenu from "./MobileMenu";
@@ -12,11 +13,13 @@ import MobileMenu from "./MobileMenu";
 const useStyle = makeStyles((theme) => ({
   root: {
     // background: "#eee",
+    overflow: "hidden",
   },
   top_bar: {
-    overflow: "hidden",
-    display: "block",
-    marginBottom: 24,
+    // overflow: "hidden",
+    // display: "block",
+    // marginBottom: 24,
+
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
@@ -50,6 +53,9 @@ const Header = () => {
   const classes = useStyle();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+
+  const [language, setLanguage] = useState("English");
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -59,30 +65,48 @@ const Header = () => {
   return (
     <div className={classes.root}>
       <Container maxWidth="lg">
-        <div className={classes.top_bar}>
-          <div className={classes.left}>
-            <MobileMenu />
-            <img src="/images/logo.png" alt="" />
-            <ul className={classes.menu_item}>
-              <li>
-                <Link to="/">
-                  <Typography variant="body2">Home</Typography>
-                </Link>
-              </li>
-              <li>
-                <Link to="/about-us">
-                  <Typography variant="body2">About Us</Typography>
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact-us">
-                  <Typography variant="body2">Contact Us</Typography>
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="">
-            <Button
+        <Grid container>
+          <Grid item mg={12}>
+            <div className={classes.top_bar}>
+              <div className={classes.left}>
+                <MobileMenu />
+                <img src="/images/logo.png" alt="" />
+                <ul className={classes.menu_item}>
+                  <li>
+                    <Link to="/">
+                      <Typography variant="body2">Home</Typography>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/about-us">
+                      <Typography variant="body2">About Us</Typography>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/contact-us">
+                      <Typography variant="body2">Contact Us</Typography>
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              <div className="language">
+                <FormControl variant="standard">
+                  <Select
+                    IconComponent={KeyboardArrowDownIcon}
+                    labelId="demo-simple-select-standard-label"
+                    id="demo-simple-select-standard"
+                    value={language}
+                    onChange={(e) => setLanguage(e.target.value)}
+                  >
+                    <MenuItem value="English">
+                      <Typography variant="body2">English</Typography>
+                    </MenuItem>
+                    <MenuItem value="Bangla">
+                      <Typography variant="body2">Bangla</Typography>
+                    </MenuItem>
+                  </Select>
+                </FormControl>
+                {/* <Button
               id="basic-button"
               aria-controls={open ? "basic-menu" : undefined}
               aria-haspopup="true"
@@ -104,9 +128,11 @@ const Header = () => {
             >
               <MenuItem onClick={handleClose}>English</MenuItem>
               <MenuItem onClick={handleClose}>Spanish</MenuItem>  
-            </Menu>
-          </div>
-        </div>
+            </Menu> */}
+              </div>
+            </div>
+          </Grid>
+        </Grid>
       </Container>
     </div>
   );

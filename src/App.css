@@ -3,3 +3,9 @@
   padding: 0;
   /* box-sizing: border-box; */
 }
+
+
+
+.language .css-pzeytu-MuiInputBase-root-MuiInput-root:before {
+  border-bottom: 0px solid red !important;
+}

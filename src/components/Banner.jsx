@@ -5,7 +5,8 @@ const useStyle = makeStyles((theme) => ({
   root: {
     backgroundImage: "linear-gradient(to top right, #ECFBEF, #FCFEFC, #E3F6FE)",
     position: "relative",
-    // top: 24
+    // top: 24,
+    marginTop: 24,
   },
   wrapper: {
     height: 800,
@@ -35,7 +36,6 @@ const useStyle = makeStyles((theme) => ({
     marginLeft: 40,
     position: "relative",
     top: 5,
-    
   },
   poly2: {
     marginLeft: 40,
