@@ -5,6 +5,8 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import AboutUs from "./pages/AboutUs";
 import Home from "./pages/Home";
+import Faq from "./pages/Faq";
+import ContactUs from "./pages/ContactUs";
 
 const theme = createTheme({
   palette: {
@@ -60,7 +62,9 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="about-us" element={<AboutUs />} />
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="faq" element={<Faq />} />
       </Routes>
       <Footer />
     </ThemeProvider>

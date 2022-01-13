@@ -68,7 +68,7 @@ export default function MobileMenu() {
             <Button onClick={toggleDrawer(anchor, true)}>
               {/* <MenuIcon className={classes.icon} /> */}
               {/* <img src={menu_icon} className={classes.menu_icon_image} alt="" /> */}
-              <MenuIcon style={{ fontSize: 45, marginRight: 15 }} />
+              <MenuIcon style={{ fontSize: 45, marginRight: 0 }} />
             </Button>
           </div>
           <Drawer

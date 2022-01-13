@@ -16,8 +16,6 @@ const useStyle = makeStyles((theme) => ({
     // overflow: "hidden",
   },
   top_bar: {
-   
-
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
@@ -73,7 +71,9 @@ const Header = () => {
             <div className={classes.top_bar}>
               <div className={classes.left}>
                 <MobileMenu />
-                <img src="/images/logo.png" alt="" />
+                <Link to="/">
+                  <img src="/images/logo.png" alt="" />
+                </Link>
                 <ul className={classes.menu_item}>
                   <li>
                     <Link to="/">

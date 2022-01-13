@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import { makeStyles } from "@mui/styles";
 
 import Accordion from "@mui/material/Accordion";
@@ -12,8 +11,8 @@ import { Button } from "@mui/material";
 const useStyle = makeStyles((theme) => ({
   title: {
     boxShadow: "0 3px 1px -2px #eee !important",
-    // boxShadow: "0 0px 0px 0px #eee !important",
     padding: "15px 0px 15px 0px !important",
+    background: 'red'
   },
   title_inner: {
     padding: "0px !important",
@@ -22,17 +21,15 @@ const useStyle = makeStyles((theme) => ({
     padding: "0px !important",
   },
   button: {
+    color: "#fff !important",
     marginTop: "30px !important",
-    "& a": {
-      color: "#fff !important",
-    },
   },
   center: {
     textAlign: "center",
   },
 }));
 
-export default function FaqHome() {
+export default function FaqOthers() {
   const classes = useStyle();
 
   const [expanded, setExpanded] = React.useState(false);
@@ -137,16 +134,7 @@ export default function FaqHome() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <div className={classes.center}>
-        <Button
-          color="primary"
-          variant="contained"
-          size="large"
-          className={classes.button}
-        >
-          <Link to="/faq">View More</Link>
-        </Button>
-      </div>
+      
     </div>
   );
 }
