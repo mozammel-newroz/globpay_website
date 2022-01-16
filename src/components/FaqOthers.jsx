@@ -15,7 +15,7 @@ const useStyle = makeStyles((theme) => ({
     background: 'red'
   },
   title_inner: {
-    padding: "0px !important",
+    // padding: "0px !important",
   },
   title_text: {
     padding: "0px !important",
