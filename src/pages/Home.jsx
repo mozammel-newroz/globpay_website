@@ -42,6 +42,7 @@ const useStyle = makeStyles((theme) => ({
     padding: 30,
     borderRadius: 30,
     transition: "margin-top 0.2s ease",
+    position: "relative",
 
     "&:hover": {
       boxShadow: "5px 10px 28px #ddd",
@@ -49,6 +50,16 @@ const useStyle = makeStyles((theme) => ({
       padding: 15,
       marginTop: 15,
     },
+  },
+  w3_number: {
+    position: "absolute",
+    right: 20,
+    top: 20,
+  },
+  number: {
+    fontSize: "4rem !important",
+    color: "#C6F0DD !important",
+    fontWeight: "600 !important",
   },
   w2_head: {
     marginTop: "20px !important",
@@ -313,6 +324,9 @@ const Home = () => {
           <Grid item md={4}>
             <div className={classes.w2__box}>
               <img src="/images/register.png" alt="" />
+              <div className={classes.w3_number}>
+                <Typography className={classes.number}>1</Typography>
+              </div>
 
               <Typography variant="h4" className={classes.w2_head}>
                 Register
@@ -327,6 +341,9 @@ const Home = () => {
           <Grid item md={4}>
             <div className={classes.w2__box}>
               <img src="/images/verify.png" alt="" />
+              <div className={classes.w3_number}>
+                <Typography className={classes.number}>2</Typography>
+              </div>
 
               <Typography variant="h4" className={classes.w2_head}>
                 Verify you identity
@@ -341,6 +358,9 @@ const Home = () => {
           <Grid item md={4}>
             <div className={classes.w2__box}>
               <img src="/images/start.png" alt="" />
+              <div className={classes.w3_number}>
+                <Typography className={classes.number}>3</Typography>
+              </div>
 
               <Typography variant="h4" className={classes.w2_head}>
                 Start sending
