@@ -295,7 +295,7 @@ const Home = () => {
           <Grid item md={4} sm={12}>
             <img src="/images/fast.png" alt="" />
             <Typography variant="h3" className={classes.w1_head}>
-              Low cost
+              Fast
             </Typography>
             <Typography variant="body1" className={classes.w1_text}>
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
@@ -307,7 +307,7 @@ const Home = () => {
           <Grid item md={4}>
             <img src="/images/safe.png" alt="" />
             <Typography variant="h3" className={classes.w1_head}>
-              Low cost
+              Safe & Secure
             </Typography>
             <Typography variant="body1" className={classes.w1_text}>
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do
