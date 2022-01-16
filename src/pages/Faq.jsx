@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Container, Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Paper from "@mui/material/Paper";
@@ -68,6 +69,9 @@ const useStyle = makeStyles((theme) => ({
   center: {
     textAlign: "center",
   },
+  link: {
+    color: "#000",
+  },
 }));
 
 const Faq = () => {
@@ -78,7 +82,7 @@ const Faq = () => {
       <div className={classes.root}>
         <Container maxWidth="lg">
           <Grid container>
-            <Grid item md={12}>
+            <Grid item md={12} sm={12} xs={12}>
               <Typography variant="h3" className={classes.title}>
                 Hi, How can we help?
               </Typography>
@@ -139,7 +143,7 @@ const Faq = () => {
       <div className={classes.wrapper2}>
         <Container maxWidth="lg">
           <Grid container spacing={3}>
-            <Grid item md={12}>
+            <Grid item md={12} sm={12} xs={12}>
               <Typography variant="h2" className={classes.title4}>
                 Can't find what you are <br /> looking for?
               </Typography>
@@ -154,10 +158,12 @@ const Faq = () => {
               </Typography>
             </Grid>
             <Grid item md={4} sm={4} xs={12} className={classes.center}>
-              <img src="/images/resoluton.png" alt="" />
-              <Typography variant="h4" className={classes.text4}>
-                Resolution
-              </Typography>
+              <Link to="/contact-us" className={classes.link}>
+                <img src="/images/resoluton.png" alt="" />
+                <Typography variant="h4" className={classes.text4}>
+                  Resolution
+                </Typography>
+              </Link>
             </Grid>
             <Grid item md={4} sm={4} xs={12} className={classes.center}>
               <img src="/images/call.png" alt="" />

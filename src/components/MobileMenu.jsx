@@ -3,6 +3,7 @@ import Drawer from "@mui/material/Drawer";
 import { makeStyles } from "@mui/styles";
 import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
 
 const useStyle = makeStyles((theme) => ({
   paper: {
@@ -83,7 +84,7 @@ export default function MobileMenu() {
               className={classes.menu_item}
               onClick={toggleDrawer(anchor, false)}
             >
-              <a href="#">Home</a>
+              <Link to="/">Home</Link>
             </Button>
 
             <Button
@@ -91,14 +92,15 @@ export default function MobileMenu() {
               className={classes.menu_item}
               onClick={toggleDrawer(anchor, false)}
             >
-              <a href="#">About Us</a>
+              <a href="#"></a>
+              <Link to="/about-us">About Us</Link>
             </Button>
             <Button
               variant="text"
               className={classes.menu_item}
               onClick={toggleDrawer(anchor, false)}
             >
-              <a href="#">Contact Ua</a>
+              <Link to="/contact-us">Contact Us</Link>
             </Button>
           </Drawer>
         </React.Fragment>

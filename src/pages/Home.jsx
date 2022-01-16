@@ -26,6 +26,9 @@ const useStyle = makeStyles((theme) => ({
   wrapper2: {
     // marginBottom: "100px !important",
     minHeight: 550,
+    [theme.breakpoints.down("md")]: {
+      marginBottom: 50,
+    },
   },
   w2_title: {
     textAlign: "center",
@@ -74,6 +77,12 @@ const useStyle = makeStyles((theme) => ({
     marginBottom: "20px !important",
     [theme.breakpoints.down("md")]: {
       fontSize: "2.5rem !important",
+    },
+  },
+  w3_subtitle: {
+    marginBottom: "20px !important",
+    [theme.breakpoints.down("md")]: {
+      fontSize: "1.8rem !important",
     },
   },
   wrapper4: {
@@ -376,7 +385,7 @@ const Home = () => {
                   />
                 </div>
                 <div className="">
-                  <Typography variant="h4" className={classes.w3_title}>
+                  <Typography variant="h4" className={classes.w3_subtitle}>
                     Bank Transfer
                   </Typography>
                   <Typography variant="body1">
@@ -395,7 +404,7 @@ const Home = () => {
                   />
                 </div>
                 <div className="">
-                  <Typography variant="h4" className={classes.w3_title}>
+                  <Typography variant="h4" className={classes.w3_subtitle}>
                     MFS
                   </Typography>
                   <Typography variant="body1">
@@ -414,7 +423,7 @@ const Home = () => {
                   />
                 </div>
                 <div className="">
-                  <Typography variant="h4" className={classes.w3_title}>
+                  <Typography variant="h4" className={classes.w3_subtitle}>
                     Cash Pickup
                   </Typography>
                   <Typography variant="body1">

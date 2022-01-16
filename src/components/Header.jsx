@@ -66,13 +66,13 @@ const Header = () => {
   return (
     <div className={classes.root}>
       <Container maxWidth="lg">
-        <Grid container>
-          <Grid item md={12}>
+        <Grid container spacing={0}>
+          <Grid item md={12} sm={12} xs={12}>
             <div className={classes.top_bar}>
               <div className={classes.left}>
                 <MobileMenu />
                 <Link to="/">
-                  <img src="/images/logo.png" alt="" />
+                  <img src="/images/logo.png" alt="" style={{ position: 'relative', top: 6 }}  />
                 </Link>
                 <ul className={classes.menu_item}>
                   <li>

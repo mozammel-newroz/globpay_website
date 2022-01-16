@@ -1,12 +1,12 @@
 import React from "react";
-import { Container, Grid, Typography } from "@mui/material";
+import { Button, Container, Grid, TextField, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormHelperText from "@mui/material/FormHelperText";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
 const useStyle = makeStyles((theme) => ({
   banner: {
@@ -25,9 +25,27 @@ const useStyle = makeStyles((theme) => ({
     fontWeight: "400 !important",
     color: "#666 !important",
   },
+  form_title: {
+    marginBottom: "30px !important",
+  },
   wrapper: {
     background: "#FBFAFD",
     padding: "60px 0px !important",
+  },
+  label: {
+    marginTop: "20px !important",
+    marginBottom: "10px !important",
+  },
+  select: {
+    background: "#fff !important",
+  },
+  form: {
+    padding: "25px 0px !important",
+  },
+  button: {
+    color: "#fff !important",
+    marginTop: "40px !important",
+    padding: "15px 25px !important",
   },
 }));
 
@@ -58,29 +76,68 @@ const ContactUs = () => {
         <Container maxWidth="md">
           <Grid container>
             <Grid item md={12}>
-              <div className={classes.banner_inner}>
-                <Typography variant="h4" className={classes.banner_title}>
+              <div className={classes.form}>
+                <Typography variant="h4" className={classes.form_title}>
                   Submit a request
                 </Typography>
 
-                <FormControl sx={{ m: 1, minWidth: "100%  " }}>
-                  <Typography variant="body2" >
-                    Send Money
+                <FormControl fullWidth>
+                  <Typography variant="body1" className={classes.label}>
+                  What can we help you with?
                   </Typography>
                   <Select
-                    labelId="demo-simple-select-helper-label"
-                    id="demo-simple-select-helper"
+                    className={classes.select}
+
                     // value={age}
-                    label="Age"
+
                     // onChange={handleChange}
                   >
-                  
                     <MenuItem value={10}>Ten</MenuItem>
                     <MenuItem value={20}>Twenty</MenuItem>
                     <MenuItem value={30}>Thirty</MenuItem>
                   </Select>
-                  <FormHelperText>With label + helper text</FormHelperText>
                 </FormControl>
+                <FormControl fullWidth>
+                  <Typography variant="body1" className={classes.label}>
+                  What kind of issue you are having with sending money?
+                  </Typography>
+                  <Select
+                    // value={age}
+
+                    // onChange={handleChange}
+                    className={classes.select}
+                  >
+                    <MenuItem value={10}>Ten</MenuItem>
+                    <MenuItem value={20}>Twenty</MenuItem>
+                    <MenuItem value={30}>Thirty</MenuItem>
+                  </Select>
+                </FormControl>
+                <FormControl fullWidth>
+                  <Typography variant="body1" className={classes.label}>
+                  Subject
+                  </Typography>
+                  <TextField variant="outlined" className={classes.select} />
+                </FormControl>
+                <FormControl fullWidth>
+                  <Typography variant="body1" className={classes.label}>
+                  Description
+                  </Typography>
+                  <TextField multiline rows={4} className={classes.select} />
+                </FormControl>
+                <FormControl fullWidth>
+                  <Typography variant="body1" className={classes.label}>
+                  Transaction ID
+                  </Typography>
+                  <TextField variant="outlined" className={classes.select} />
+                </FormControl>
+                <Button
+                  color="primary"
+                  variant="contained"
+                  size="large"
+                  className={classes.button}
+                >
+                  Submit Request
+                </Button>
               </div>
             </Grid>
           </Grid>
