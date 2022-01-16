@@ -125,8 +125,13 @@ const useStyle = makeStyles((theme) => ({
   },
   w4_store: {
     marginTop: 30,
+    display: "flex",
+    flexDirection: "row",
     "& img": {
       marginRight: 10,
+      [theme.breakpoints.down("sm")]: {
+        width: "40%",
+      },
     },
   },
   wrapper5: {

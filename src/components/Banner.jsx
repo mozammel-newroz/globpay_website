@@ -9,7 +9,7 @@ const useStyle = makeStyles((theme) => ({
     marginTop: 24,
   },
   wrapper: {
-    height: 800,
+    minHeight: "calc(100vh - 90px)",
     display: "flex",
     alignItems: "center",
   },
@@ -50,8 +50,13 @@ const useStyle = makeStyles((theme) => ({
   },
   download: {
     marginTop: 30,
+    display: "flex",
+    flexDirection: "row",
     "& img": {
       marginRight: 15,
+      [theme.breakpoints.down("sm")]: {
+        width: "40%",
+      },
     },
   },
   title: {
