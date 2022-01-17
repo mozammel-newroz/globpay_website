@@ -5,8 +5,8 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import AboutUs from "./pages/AboutUs";
 import Home from "./pages/Home";
-import Faq from "./pages/Faq";
 import ContactUs from "./pages/ContactUs";
+import Resolution from "./pages/Resolution";
 
 const theme = createTheme({
   palette: {
@@ -22,7 +22,7 @@ const theme = createTheme({
     body1: {
       fontSize: "1rem",
       fontWeight: 400,
-      color: '#595959'
+      color: "#595959",
     },
     body2: {
       fontSize: "1.1rem",
@@ -45,7 +45,6 @@ const theme = createTheme({
       fontSize: "4rem",
       fontWeight: 800,
       lineHeight: 1.4,
-
     },
     h6: {
       fontWeight: 500,
@@ -64,7 +63,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-us" element={<ContactUs />} />
-        <Route path="faq" element={<Faq />} />
+        <Route path="/resolution" element={<Resolution />} />
       </Routes>
       <Footer />
     </ThemeProvider>

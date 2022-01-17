@@ -5,12 +5,24 @@ import Button from "@mui/material/Button";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-router-dom";
 
+import HomeIcon from "@mui/icons-material/Home";
+import RateReviewIcon from '@mui/icons-material/RateReview';
+import DvrIcon from "@mui/icons-material/Dvr";
+import { List, Typography } from "@mui/material";
+
 const useStyle = makeStyles((theme) => ({
   paper: {
     width: 250,
+    display: "flex",
+    justifyContent: "flex-start",
   },
   menu_item: {
     // color: "#fff !important",
+
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "center",
+
     padding: "20px 20px !important",
     borderBottom: "1px solid #eee !important",
     color: "#000 !important",
@@ -18,6 +30,9 @@ const useStyle = makeStyles((theme) => ({
       color: "#000",
       textDecoration: "none",
     },
+  },
+  link_icon: {
+    marginRight: 10,
   },
   menu_icon: {
     [theme.breakpoints.up("sm")]: {
@@ -79,29 +94,37 @@ export default function MobileMenu() {
             classes={{ paper: classes.paper }}
             // style={{ background: "red" }}
           >
-            <Button
+            <List
               variant="text"
               className={classes.menu_item}
               onClick={toggleDrawer(anchor, false)}
             >
-              <Link to="/">Home</Link>
-            </Button>
+              <HomeIcon className={classes.link_icon} />
+              <Link to="/">
+                <Typography variant="body2">Home</Typography>
+              </Link>
+            </List>
 
-            <Button
+            <List
               variant="text"
               className={classes.menu_item}
               onClick={toggleDrawer(anchor, false)}
             >
-              <a href="#"></a>
-              <Link to="/about-us">About Us</Link>
-            </Button>
-            <Button
+              <DvrIcon className={classes.link_icon} />
+              <Link to="/about-us">
+                <Typography variant="body2">About Us</Typography>
+              </Link>
+            </List>
+            <List
               variant="text"
               className={classes.menu_item}
               onClick={toggleDrawer(anchor, false)}
             >
-              <Link to="/contact-us">Contact Us</Link>
-            </Button>
+              <RateReviewIcon className={classes.link_icon} />
+              <Link to="/contact-us">
+                <Typography variant="body2">Contact Us</Typography>
+              </Link>
+            </List>
           </Drawer>
         </React.Fragment>
       ))}

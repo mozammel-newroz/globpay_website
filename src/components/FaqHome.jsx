@@ -11,8 +11,8 @@ import { Button } from "@mui/material";
 
 const useStyle = makeStyles((theme) => ({
   title: {
-    boxShadow: "0 3px 1px -2px #eee !important",
-    // boxShadow: "0 0px 0px 0px #eee !important",
+    // boxShadow: "0 3px 1px -2px #eee !important",
+    boxShadow: "0px  1px 0px rgba(0,0,0,0.05) !important",
     padding: "15px 0px 15px 0px !important",
   },
   title_inner: {
@@ -144,7 +144,7 @@ export default function FaqHome() {
           size="large"
           className={classes.button}
         >
-          <Link to="/faq">View More</Link>
+          <Link to="/contact-us">View More</Link>
         </Button>
       </div>
     </div>
