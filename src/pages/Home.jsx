@@ -115,7 +115,7 @@ const useStyle = makeStyles((theme) => ({
   },
   w4_left_img: {
     position: "relative",
-    top: 19,
+    top: 39,
     [theme.breakpoints.down("md")]: {
       display: "none",
     },
@@ -467,7 +467,7 @@ const Home = () => {
         <Grid container spacing={3}>
           <Grid item md={12}>
             <div className={classes.wrapper4}>
-              <div>
+              <div style={{padding: 20}} >
                 <img
                   src="/images/phone.png"
                   alt=""

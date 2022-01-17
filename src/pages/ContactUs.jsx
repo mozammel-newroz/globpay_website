@@ -46,6 +46,16 @@ const useStyle = makeStyles((theme) => ({
       borderTop: "5px solid #49C755",
     },
   },
+  box2: {
+    background: "#fff",
+    padding: 25,
+    borderRadius: 15,
+    boxShadow: "1px 3px 6px #eee",
+    textAlign: "center",
+    cursor: "pointer",
+    marginTop: 0,
+    borderTop: "5px solid #49C755",
+  },
   title3: {
     margin: "20px 0px !important",
   },
@@ -108,7 +118,7 @@ const ContactUs = () => {
           </Grid>
           <Grid container spacing={4}>
             <Grid item md={4} sm={4} xs={12}>
-              <div className={classes.box}>
+              <div className={classes.box2}>
                 <img src="/images/send_money.png" alt="" />
                 <Typography variant="h4" className={classes.title2}>
                   Sending Money
