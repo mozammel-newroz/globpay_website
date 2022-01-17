@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Container, Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
@@ -59,6 +59,7 @@ const useStyle = makeStyles((theme) => ({
   title3: {
     margin: "20px 0px !important",
   },
+
   wrapper2: {
     background: "#fff",
     padding: "90px 0px",
@@ -86,6 +87,8 @@ const useStyle = makeStyles((theme) => ({
 
 const ContactUs = () => {
   const classes = useStyle();
+
+  const [selectedFaq, setSelectedFaq] = useState("sending_money");
 
   return (
     <>
@@ -118,7 +121,12 @@ const ContactUs = () => {
           </Grid>
           <Grid container spacing={4}>
             <Grid item md={4} sm={4} xs={12}>
-              <div className={classes.box2}>
+              <div
+                className={
+                  selectedFaq === "sending_money" ? classes.box2 : classes.box
+                }
+                onClick={(e) => setSelectedFaq("sending_money")}
+              >
                 <img src="/images/send_money.png" alt="" />
                 <Typography variant="h4" className={classes.title2}>
                   Sending Money
@@ -126,7 +134,12 @@ const ContactUs = () => {
               </div>
             </Grid>
             <Grid item md={4} sm={4} xs={12}>
-              <div className={classes.box}>
+              <div
+                className={
+                  selectedFaq === "receiving_money" ? classes.box2 : classes.box
+                }
+                onClick={(e) => setSelectedFaq("receiving_money")}
+              >
                 <img src="/images/receiving_money.png" alt="" />
                 <Typography variant="h4" className={classes.title2}>
                   Receiving Money
@@ -134,7 +147,12 @@ const ContactUs = () => {
               </div>
             </Grid>
             <Grid item md={4} sm={4} xs={12}>
-              <div className={classes.box}>
+              <div
+                className={
+                  selectedFaq === "account" ? classes.box2 : classes.box
+                }
+                onClick={(e) => setSelectedFaq("account")}
+              >
                 <img src="/images/account.png" alt="" />
                 <Typography variant="h4" className={classes.title2}>
                   Account
